@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="Vs_Solution_Organizer.BlankPage1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Vs_Solution_Organizer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid Width="250" Height="250" BorderBrush="Black" BorderThickness="1" CornerRadius="4">
+            <Grid.Background>
+                <SolidColorBrush Color="Orange" Opacity=".5" />
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Image Source="Assets/StoreLogo.png" HorizontalAlignment="Center" Width="200" Grid.Row="0"></Image>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Here goes a long solution name" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Margin="10,0,10,0"/>
+                <TextBlock Text="Web, Uwp, C#" Margin="10,0,10,0" Foreground="Blue" Grid.Column="0" Grid.Row="1"/>
+                <Button Grid.Column="1" Grid.Row="1" Background="Transparent" BorderBrush="Transparent" CommandParameter="{Binding Path=name}" >
+                    <SymbolIcon Symbol="Edit"/>
+                </Button>
+                <TextBlock Text="tag1, tag3, tag2, tag5 " Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="0" Margin="10,0,10,0" FontSize="10"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>
